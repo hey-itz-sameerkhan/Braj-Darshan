@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    
+
+  <h1 id="welcomeText">Loading...</h1>
+
+  <script>
+    const token = localStorage.getItem('token');
+
+    fetch('/api/dashboard', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(res => {
+      if (!res.ok) {
+        throw new Error();
+      }
+      return res.json();
+    })
+    .then(data => {
+      document.getElementById('welcomeText').textContent = data.message;
+    })
+    .catch(() => {
+      alert('Please login again');
+      window.location.href = '/login.html';
+    });
+  </script>
+
+
+
+
+</body>
+</html>

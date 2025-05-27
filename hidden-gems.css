@@ -1,0 +1,466 @@
+:root {
+    --background-color: #000;
+    --text-color: #fff;
+    --primary-color: #fdd835;
+    --hover-color: #a37000;
+    --form-bg: #1a1a1a;
+    --border-color: #333;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  html, body {
+    /* height: 100%; */
+    width: 100%;
+    background-color: var(--background-color);
+    /* color: var(--text-color); */
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  body {
+    min-height: 100vh;
+  }
+  
+  #main {
+    min-height: 100vh;
+    padding-top: 126px; /* navbar ki height ke hisaab se */  
+  }
+  
+  #nav {
+    /* background-color: rgba(0, 0, 0, 0.38); */
+    background-color: rgba(255, 255, 255, 0.2);  /*Transparent white color */
+    backdrop-filter: blur(2px); /* Zyada blur effect */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    gap: 50px;
+  }
+  
+  #nav img {
+    height: 125px;
+    width: 120px;
+    transition: all 0.4s ease;
+  }
+  
+  #nav h4 {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text-color);
+  }
+  
+  .nav-button {
+    background-color: rgba(73, 71, 71, 0.23);
+    padding: 15px;
+    border-radius: 30px;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    color: white;
+    width: 110px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-button:hover {
+    transform: translateY(-8px);
+    background-color: #fdd835;
+    border: 2px solid #a37000;
+    box-shadow: 0 0 6px #a37000;
+  }
+  
+  .nav-button:hover h4 {
+    color: #000 !important;
+  }
+  
+  
+  /* ✅ Default transparent nav state hover (like Watch Video) */
+  #nav:not(.scrolled) .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  #nav:not(.scrolled) .nav-button:hover h4 {
+    color: #fff !important;
+  }
+  
+  /* ✅ When navbar becomes black — golden hover effect */
+  #nav.scrolled .nav-button:hover {
+    background-color: #fdd835 !important;
+    border: 2px solid #a37000 !important;
+    box-shadow: 0 0 6px #a37000 !important;
+  }
+  
+  #nav.scrolled .nav-button:hover h4 {
+    color: #000 !important;
+  }
+  
+  
+@media (max-width: 768px) {
+  #nav {
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+
+
+/* 🍔 Hamburger Icon */
+#hamburger {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 28px;
+  z-index: 1001;
+  color: #fdd835;
+  cursor: pointer;
+}
+
+/* 📱 Mobile Menu Styling */
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 260px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  gap: 20px;
+  transition: right 0.4s ease;
+  z-index: 1000;
+}
+
+#mobile-menu a {
+  color: #fdd835;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff2;
+}
+
+#mobile-menu.show {
+  right: 0;
+}
+
+
+/* Close X button */
+#close-menu {
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  #nav {
+    background-color: #000;
+  }
+
+  .nav-button {
+    display: none;
+  }
+}
+
+  
+
+
+  h1 {
+    cursor: default;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: #fdd835;
+    /* text-shadow: 2px 2px 8px rgba(255, 204, 112, 0.5); */
+    animation: fadeInDown 1.5s ease-out;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    h1 {
+      font-size: 1.9rem;
+      margin: 1.4rem 0;
+    }
+  }
+  
+
+  .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .card-container {
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .card {
+    width: 340px;
+    height: 540px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    color: #fff;
+  }
+  
+
+.card img {
+  width: 100%;
+  height: 200px;            /* 🔁 Fixed height for uniformity */
+  object-fit: cover;        /* ⭐ Maintains aspect ratio without stretch */
+  border-radius: 15px;
+}
+
+
+
+  .card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 30px rgba(253, 216, 53, 0.7) !important;
+    transition: transform  all, box-shadow 0.3s ease !important;
+  }
+  
+
+  .card-content h3,
+  .card-content p {
+    transition: color 0.4s ease;
+  }
+  .card-content {
+    flex: 1;
+    padding: 15px 10px;
+    overflow: hidden;
+  }
+  
+  .card-content {
+    /* flex: 1; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-content h2 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #fdd835;
+  }
+
+  .card-way{
+    /* display: flex; */
+    align-items: center;
+    /* gap: 1rem; */
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+  }
+  .highlight {
+    font-family: "Playfair Display", "serif";
+    font-size: 19.2px;
+    font-weight: 400;
+    color: #ffd700;
+    font-style: bold;
+  }
+  
+  .card-content p {
+    font-family: "Playfair Display", "serif";
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column;
+    }
+
+    .card img, .card-content {
+      width: 100%;
+    }
+  }
+
+
+
+
+  
+  
+/* Footer styles */
+#footer {
+  background: linear-gradient(to left bottom, #fff176 20%, #fdd835 80%);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 30px 20px;
+  text-align: left;
+}
+
+#footer > img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.1;
+}
+
+#f1 img {
+  background-color: #000;
+  height: 150px;
+}
+
+#f2, #f3, #f4 {
+  color: #000;
+  cursor: default;
+  width: fit-content;
+  position: relative;
+  z-index: 2;
+}
+
+#f2 h3, #f3 h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+#f2 a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#f2 a:hover {
+  color: #000;
+}
+
+#f3 #qr {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+#f3 p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#f4 h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.address-icon {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+#f4 a {
+  display: inline-block;
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-top: 4px;
+}
+
+#f5 {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  z-index: 2;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  #footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  #f1 img {
+    height: 120px;
+  }
+
+  #f2 a {
+    font-size: 14px;
+  }
+
+  #f3 #qr {
+    width: 80px;
+  }
+
+  #f4 h4 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #f5 {
+    margin-top: 20px;
+  }
+}
+

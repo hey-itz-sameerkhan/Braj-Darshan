@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRAJ-DARSHAN</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="braj.css" />
+
+  <!-- Locomotive Scroll CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+  />
+
+
+</head>
+<body>
+
+  <!-- ✨ Preloader Start -->
+  <div id="preloader">
+    <h2>Loading <span>Braj-Darshan...</span></h2>
+  </div>
+  <!-- ✨ Preloader End -->
+
+
+<div id="vlc">
+  <video autoplay loop muted src="hero section/India-360-v2.mp4"></video>
+</div>
+
+
+  <div id="main" data-scroll-container>
+  
+    
+           <!-- 🧭 Navigation Bar -->
+       <div id="nav" data-scroll data-scroll-sticky data-scroll-target="#main">
+         <img src="logo-and-icons-footers-images/Braj-Darshan Logo (dark-mode).png" alt="BRAJ-DARSHAN Logo" />
+       
+         <!-- 🍔 Hamburger Icon -->
+       
+       <div id="hamburger">
+         <i class="fa-solid fa-bars"></i>
+       </div>
+       
+       <!-- Sliding Sidebar Menu -->
+       <div id="mobile-menu">
+         <div id="close-menu">&times;</div>
+         <a href="home.html">Home</a>
+         <a href="service.html">Services</a>
+         <a href="contact.html">Contact</a>
+         <a href="about-us.html">About</a>
+         <a href="login.html">Login</a>
+       </div>
+
+
+       <!-- Desktop Nav Buttons -->
+       <a href="home.html"><button class="nav-button"><h4>home</h4></button></a>
+       <a href="service.html"><button class="nav-button"><h4>services</h4></button></a>
+       <a href="contact.html"><button class="nav-button"><h4>Contact</h4></button></a>
+       <a href="about-us.html"><button class="nav-button"><h4>about</h4></button></a>
+       <a href="login.html"><button class="nav-button"><h4>login</h4></button></a>
+       </div>
+
+
+    
+        
+    
+        <!-- 🔽 Main content wrapper -->
+        
+        <div id="down">
+          <!-- 🎥 Hero Section with Video Background -->
+          <section id="hero">
+           
+            <div class="box">
+              <p class="luxury-tag">Experience Luxury Travel</p>
+              <h1 class="main-heading">Explore the Braj<br />Like Never Before</h1>
+              <p class="cover-line">
+                Curated journeys to the India's most famous & spritual monuments. Let us<br />
+                transform your travel dreams into unforgettable memories.
+              </p>
+              <div class="button-group">
+                <a href="#plan" class="btn primary-btn">Start Planning</a>
+                <a href="#video" class="btn secondary-btn">Watch Video</a>
+              </div>
+            </div>
+          </section>
+    
+    
+    
+     <!-- ✅ BRAJ-DARSHAN Attractions Section -->
+           
+       <section id="braj-attractions">
+         <h2 class="section-heading">Attractions <br><span>worth a thousand stories</span></h2>
+         <div class="carousel-wrapper">
+               
+           
+           <div class="attraction-scroll" id="attraction-scroll">
+             <!-- 25 cards -->
+             <div class="attraction-card" style="background-image: url('attraction-section-images/red\ fort.jpg');">
+               <h3>red fort</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/prem\ mandirjpg.jpg');">
+               <h3>Prem Mandir</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/yamuna\ ghat.webp');">
+               <h3>Yamuna Ghats</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/taj\ mahal.webp');">
+               <h3>Taj Mahal</h3>
+             </div>
+             <!-- Add more cards -->
+             <div class="attraction-card" style="background-image: url('attraction-section-images/iskcon\ temple.jpg');">
+               <h3>Iskcon temple</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/maa\ vaishno\ devi\ mandir.jpg');">
+               <h3>Maa Vaishno Devi</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/shri\ banke\ bihari\ temple.webp');">
+               <h3>Shri Banke Bihari Mandir</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/char\ dhaam\ temple.jpg');">
+               <h3>chaar dhaam</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/birla\ \(gita\)\ mandir.jpg');">
+               <h3>birla mandir</h3>
+             </div>
+             <div class="attraction-card" style="background-image: url('attraction-section-images/janm\ bhoomi.jpg');">
+               <h3>janm bhoomi</h3>
+             </div>
+       
+           </div>
+        
+         </div>
+       
+         <div class="discover-btn">
+           <button class="arrow left" onclick="scrollAttractions(-1)"><i class="fa-solid fa-angle-left"></i></button>
+       
+           <a href="attraction.html" class="btn primary-btn">Discover More</a>
+       
+           <button class="arrow right" onclick="scrollAttractions(1)"><i class="fa-solid fa-angle-right"></i></button>
+         </div>
+       </section>
+       
+       
+         <section id="about-us" class="about-us-section">
+           <div class="about-content">
+             <div class="about-left">
+               <img src="logo-and-icons-footers-images/review-left-content-image.png" alt="Indian Landmarks" class="about-img" />
+             </div>
+             <div class="about-right">
+               <h2 class="section-label">ADVENTURE AWAITS</h2>
+               <h3>Your Journey, Our Passion</h3>
+               <p>
+                 We believe travel is more than just visiting new places; it's about creating memories, 
+                 experiencing diverse cultures, and discovering the wonders of India. With years of experience 
+                 in the travel industry, our dedicated team is committed to providing exceptional travel experiences 
+                 tailored to your unique desires and needs.
+               </p>
+               <div class="features">
+                 <p>✔ Budget-Friendly</p>
+                 <p>✔ Luxurious Getaways</p>
+                 <p>✔ Trusted Local Guides</p>
+               </div>
+               <button class="learn-more-btn">
+                 <a href="review.html" class="learn-more-btn">
+                 Top Review ➜</a>
+               </button>
+               <div class="review-section">
+                 <img src="logo-and-icons-footers-images/review icon.jpg" alt="User" class="review-user" />
+                 <div class="rating">
+                   <strong>4.7 Star Rating</strong>
+                   <p>Based on 3,571 Reviews</p>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </section>
+       
+         
+         <!-- 🏌️ Scrolling Text Marquee -->
+       
+         <section id="page2">
+           <div id="scroller">
+             <div id="scroller-in">
+               <h4>Popular Destinations</h4>
+               <h4>Adventure Tours</h4>
+               <h4>Famous Monuments</h4>
+               <h4>Luxury Hotels</h4>
+               <h4>Comfortable Travel</h4>
+             </div>
+       
+             <div id="scroller-in">
+               <h4>Popular Destinations</h4>
+               <h4>Adventure Tours</h4>
+               <h4>Famous Monuments</h4>
+               <h4>Luxury Hotels</h4>
+               <h4>Comfortable Travel</h4>
+             </div>
+           </div>
+         </section>
+       
+       
+         <!-- 🌟 Final Hidden Gems Section - Just Like Attractions, 20+ Support, Loop Scroll, Perfect Design -->
+       
+       <section id="hidden-gems">
+         <h2 class="section-heading">Hidden Jewels 
+            <br><span> Unseen Beauty of History & Spirituality</span></h2>
+         <div class="carousel-wrapper">
+       
+           <div class="gems-scroll" id="gems-scroll">
+             <!-- You can add 20-25+ cards here -->
+             <div class="gem-card" style="background-image: url('gems-section-images/Soor\ Sarovar\ Bird\ Sanctuary.jpg');"><h3>Sarovar Bird Sanctuary</h3></div>
+             <div class="gem-card" style="background-image: url('gems-section-images/Chamunda-Devi-Temple.jpg');"><h3>chamunda devi mandir</h3></div>
+             <div class="gem-card" style="background-image: url('gems-section-images/chini\ k\ rauza.jpg');"><h3>chini k rauza</h3></div>
+             <div class="gem-card" style="background-image: url('gems-section-images/shiv\ mandir\ agra2.jpg');"><h3>Shiv Mandir, Agra</h3></div>
+       
+       
+             <div class="gem-card" style="background-image: url('gems-section-images/govardhan\ hill.avif');"><h3>govardhan</h3></div>
+             <div class="gem-card" style="background-image: url('gems-section-images/guru\ k\ taal\ agra.jpg');"><h3>sikindara guru taal</h3></div>
+             <div class="gem-card" style="background-image: url('gems-section-images/potra\ kundjpg.jpg');"><h3>potra-kund</h3></div>
+             <div class="gem-card" style="background-image: url('gems-section-images/Rajeswar\ mandir.jpg');"><h3>rajeswar mandir</h3></div>
+             <!-- repeat as needed -->
+           </div>
+       
+         </div>
+       
+         <div class="discover-btn">
+           <button class="arrow left" onclick="scrollGems(-1)"><i class="fa-solid fa-angle-left"></i></button>
+       
+           <a href="hidden-gems.html" class="btn primary-btn">Discover More</a>
+       
+           <button class="arrow right" onclick="scrollGems(1)"><i class="fa-solid fa-angle-right"></i></button>
+         </div>
+       </section>
+       
+       
+       <!-- special tour section -->
+       
+       <section class="destinations">
+         <div class="left-content">
+           <span class="tagline"><h3>special tour package</h3></span>
+           <h2>for Mathura & Agra</h2>
+           <p>Join us as we tour the wonders of the Agra & Mathura, one incredible travel at a time.</p>
+           <div class="button">
+           <a href="tour-packages.html" class="package-btn">view-more</a>
+         </div>
+       
+           <div class="card london" style="background-image: url('attraction-section-images/taj\ mahal.webp');">
+             <span>Taj Mahal</span>
+           </div>
+         </div>
+       
+         <div class="right-cards">
+           <div class="top-row">
+             <div class="card" style="background-image: url('attraction-section-images/prem\ mandirjpg.jpg');">
+               <span>Prem Mandir</span>
+             </div>
+             <div class="card" style="background-image: url('attraction-section-images/maa\ vaishno\ devi\ mandir.jpg');">
+               <span>Maa Vaishno Devi</span>
+             </div>
+           </div>
+       
+           <div class="bottom-row">
+             <div class="card" style="background-image: url('attraction-section-images/red\ fort.jpg');">
+               <span>Red Fort</span>
+             </div>
+             <div class="card" style="background-image: url('attraction-section-images/yamuna\ ghat.webp');">
+               <span>Yamuna Ghat</span>
+             </div>
+           </div>
+         </div>
+       </section>
+       
+       
+       
+       
+       
+       
+       <!-- ✨ Explore BRAJ Section -->
+             
+       <section id="braj-diaries">
+         <h2>Unveiling Braj’s Elegance</h2>
+         <p class="sub-heading">Best Stays , Restaurants & Serenity Much More...</p>
+       
+         <div class="diaries-scroll-container" id="scrollContainer">
+           <!-- Hotel-->
+           <div class="diary-card">
+             <img src="hotels,restaurents & gardens/demo hotel guru kripa inn grand.jpg" alt="Hotel">
+             <h3>Hotel Guru Kripa Inn Grand</h3>
+             <div class="info">
+               <h4>Hotel Guru Kripa Inn Grand</h4>
+               <p><span class="highlight"> 📍Location:</span> 34 Dhauli Pyau Road, Mathura
+                 <br>
+                 <span class="highlight">🛍️ Description:</span>
+                 Hotel Guru Kripa Inn Grand is a budget-friendly 3-star hotel located near Sri Krishna Janmabhoomi, making it a great stay option for travelers visiting Mathura for pilgrimage or sightseeing. The hotel offers comfortable rooms, free breakfast, and Wi-Fi services, ensuring a pleasant and hassle-free stay. The staff is known for their friendly and helpful service, making it a great choice for families and solo travelers alike.
+                 <br>
+                 <span class="highlight">✨ Features:</span><br>
+                 - Affordable and comfortable rooms<br>
+                 - Close to religious sites<br>
+                 - 24/7 room service for convenience<br>
+                 - Complimentary breakfast and Wi-Fi<br>
+                 - Secure parking facility for travelers<br>
+               </p>
+             </div>
+           </div>
+       
+           <!--Park-->
+           <div class="diary-card">
+             <img src="hotels,restaurents & gardens/demo park dayal bagh.jpg" alt="Park">
+             <h3>Garden Dayal Bagh</h3>
+             <div class="info">
+               <h4>Garden Dayal Bagh</h4>
+               <p><span class="highlight"> 📍Location:</span> Dayal Bagh, Agra <br>
+                 <span class="highlight">🛍️ Description:</span>
+                  Dayal Bagh is a spiritual and peaceful garden, serving as the headquarters of Radhasoami Satsang. It is famous for its white marble temple, which was under construction for 118 years before being completed in 2018. The serene environment is perfect for meditation and relaxation.
+                  <br>
+                  <span class="highlight">✨ Features:</span><br>
+                 - Stunning architectural beauty<br>
+                 - Spiritual and serene atmosphere<br>
+                 - Ideal for meditation<br>
+                 - Free entry with no ticket charges<br>
+                 - Photography allowed for capturing the beauty<br>
+              
+              </p>
+             </div>
+          </div>
+
+    <!--Restaurent-->
+    <div class="diary-card">
+      <img src="hotels,restaurents & gardens/demo restaurent radhika sweets restaurent.jpg" alt="Restaurant">
+      <h3>Radhika Sweet Restaurent</h3>
+      <div class="info">
+        <h4>Radhika Sweet Restaurent</h4>
+        <p><span class="highlight"> 📍Location:</span> Govardhan Chouraha, NH2, Opposite Jain Mandir, Mathura<br>
+          <span class="highlight">🛍️ Description:</span>
+          Radhika Sweet Restaurant is a famous dining spot renowned for its sweets and delicious meals. It serves Indian, Chinese, and Continental cuisine in a cozy and inviting atmosphere. The restaurant is especially popular for its Mathura Peda and other traditional sweets.
+          <br>
+          <span class="highlight">✨ Features:</span><br>
+          - Specializes in traditional sweets<br>
+          - Diverse menu with multiple cuisines<br>
+          -  Home delivery available for convenience<br>
+          - Hygienic and well-maintained dining space<br>
+          - Warm and inviting ambiance<br>
+          </p>
+      </div>
+    </div>
+
+    <!--Market-->
+    <div class="diary-card">
+      <img src="hotels,restaurents & gardens/demo market Bengali Ghat.webp" alt="Market">
+      <h3>Bengali Ghat Market</h3>
+      <div class="info">
+        <h4>Bengali Ghat Market</h4>
+        <p><span class="highlight"> 📍Location:</span> Bengali Ghat, Mathura<br>
+          <span class="highlight">🛍️ Description:</span>
+          Bengali Ghat Market is a vibrant shopping hub, known for its religious items, brass idols, and temple decorations. The market is also famous for selling pure ghee sweets, which are a staple in Mathura.One of the busiest markets in Mathura, known for its religious items, brass idols, and temple decoration materials. The sweets made here are famous for their purity.<br>
+          <span class="highlight">✨ Features:</span><br>
+          - Religious items and artifacts available<br>
+          - Local food stalls serving street food specialties<br>
+          - Famous for brass statues and handicrafts<br>
+          - Affordable shopping prices with room for bargaining<br>
+          - Offers high-quality sweets and snacks<br>
+          </p>
+      </div>
+    </div>
+
+    <!--Hotel-->
+    <div class="diary-card">
+      <img src="hotels,restaurents & gardens/demo hotel madhav muskan residency.jpg" alt="Hotel">
+      <h3>Hotel Madhav Muskan Residency</h3>
+      <div class="info">
+        <h4>Madhav Muskan Residency</h4>
+        <p> <span class="highlight"> 📍Location:</span> 58/169, Krishna Puri Rd, Sadar Bazar, Mathura<br>
+          <span class="highlight">🛍️ Description:</span>
+          A budget-friendly hotel located in Sadar Bazar, providing a comfortable stay with modern facilities.Madhav Muskan Residency is an affordable hotel near Yamuna Expressway, offering modern amenities, comfortable rooms, and free breakfast. A good option for travelers looking for affordable accommodation.<br>
+          <span class="highlight">✨ Features:</span><br>
+          - Cost-effective lodging<br>
+          - 24/7 Room Services & Quick assistance whenever needed<br>
+          - Library & Terrace for Spaces for relaxation<br>
+          - Close to major transport hubs<br>
+          - Free Wi-Fi and breakfast<br>
+          </p>
+      </div>
+    </div>
+
+    <!--Park-->
+    <div class="diary-card">
+      <img src="hotels,restaurents & gardens/demo park shah jahan park agra.webp" alt="Park">
+      <h3>Shah Jahan Park</h3>
+      <div class="info">
+        <h4>Shah Jahan Park</h4>
+        <p><span class="highlight"> 📍Location:</span> Agra, Uttar Pradesh<br>
+          <span class="highlight">🛍️ Description:</span>
+          A Mughal-style park near the Taj Mahal, known for its lush greenery and peaceful environment. its also  featuring lush greenery, peaceful surroundings, and historical significance. A great place for morning walks and relaxation.<br>
+          <span class="highlight">✨ Features:</span><br>
+          - Beautifully landscaped gardens<br>
+          - Calm and scenic environment<br>
+          - Beautifully Landscaped Gardens – Mughal-inspired design<br>
+          - Free Entry – No tickets required<br>
+          - Capture the picturesque beauty<br>
+          - Ideal for picnics and leisure<br>
+          </p>
+      </div>
+    </div>
+
+    <!--Restaurent-->
+    <div class="diary-card">
+      <img src="hotels,restaurents & gardens/demo restaurent shri radha krishna.webp" alt="Restaurant">
+      <h3>Shri Radha Krishna Restaurent</h3>
+      <div class="info">
+        <h4>Shri Radha Krishna Restaurent</h4>
+        <p><span class="highlight"> 📍Location:</span> Bharatpur, Chandrapuri Colony, Mathura<br>
+          <span class="highlight">🛍️ Description:</span>
+          Shri Radha Krishna Restaurant is a popular family-friendly dining spot in Mathura, known for its authentic North Indian and Mughlai cuisine. The restaurant offers a cozy and welcoming ambiance, making it a great place for families, tourists, and locals alike. It is well-rated for its delicious food, quick service, and hygienic environment.<br>
+          <span class="highlight">✨ Features:</span><br>
+          - Specializes in North Indian and Mughlai dishes<br>
+          - Enjoy fresh air while dining<br>
+          - Family-friendly environment<br>
+          - Outdoor seating available<br>
+          </p>
+      </div> 
+    </div>
+
+    <!--Market-->
+    <div class="diary-card">
+      <img src="hotels,restaurents & gardens/demo market chatta bazar.webp" alt="Market">
+      <h3>Chatta Bazaar</h3>
+      <div class="info">
+        <h4>Chatta Bazaar</h4>
+        <p><span class="highlight"> 📍Location:</span> Choubey Para, Mathura<br>
+          <span class="highlight">🛍️ Description:</span>
+          Chatta Bazaar is one of Mathura’s oldest and most vibrant markets, located near Vishram Ghat. It is famous for its silver jewelry, handicrafts, and temple decoration items. The market is a bustling hub for shoppers, offering a wide range of traditional and religious artifacts. Whether you’re looking for silver anklets, brass idols, or authentic Mathura sweets, this market has something for everyone
+          <br>
+          <span class="highlight">✨ Features:</span><br>
+          - Historic marketplace<br>
+          - Budget-friendly prices with room for bargaining<br>
+          - Famous for silver jewelry and handicrafts<br>
+          - One of Mathura’s oldest shopping hubs<br>
+          - Offers authentic Mathura sweets<br>
+          </p>
+      </div>
+    </div>
+       
+         </div>
+          <div class="explore-btn">
+         <a href="restaurents.html" class="btn primary-btn">Explore More</a>
+       </div>
+       </section>
+
+       
+
+  
+        <!-- 💚 Green Divider with Subscription Text -->
+
+        <div id="green-div">
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
+            alt=""
+          />
+
+          <h4>Stay connected with the divine charm of Braj! Sign up for exclusive updates & special offers straight to your inbox.</h4>
+
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
+            alt=""
+          />
+        </div>
+      </section>
+ </div>
+
+  
+    <!-- Footer CTA Section -->
+
+    <section class="footer-cta">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Ready to Start Your Adventure?</h2>
+          <p>Let us help you create the perfect journey. Our travel experts are ready to craft your dream vacation.</p>
+          <a href="#" class="start-btn">Start Planning <span>➜</span></a>
+        </div>
+        <div class="footer-right">
+          <div class="image-wrapper">
+            <img src="logo-and-icons-footers-images/footer-ready-image.png" alt="Girl with suitcase" class="main-img" />
+          </div>
+          <img src="logo-and-icons-footers-images/car.png" class="car-icon" alt="Car Icon" />
+        </div>
+      </div>
+    </section>
+    
+
+
+
+
+    <!-- ⛳ Page 4 Image Sections -->
+
+    <div id="page4">
+      <h1>WHAT ARE YOU WAITING FOR?</h1>
+      <div class="elem">
+        <h2>LUXURY STAYS</h2>
+        <img
+          src="logo-and-icons-footers-images/luxury stays.jpg"
+          alt=""
+        />
+      </div>
+      <div class="elem">
+        <h2>COMFORTABLE TRAVEL</h2>
+        <img
+          src="logo-and-icons-footers-images/comfortable travel.webp"
+          alt=""
+        />
+      </div>
+      <div class="elem">
+        <h2>ADVENTURE TOURS</h2>
+        <img
+          src="logo-and-icons-footers-images/adventure tours.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+        
+     <!-- 🦶 Footer Section -->
+     <footer id="footer">
+       <img
+         src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg"
+         alt=""
+       />
+     
+       <!-- Logo -->
+       <div id="f1">
+         <img src="logo-and-icons-footers-images/Braj-Darshan Logo (dark-mode).png" alt="BRAJ-DARSHAN Logo" />
+       </div>
+     
+       <!-- Quick Links -->
+       <div id="f2">
+         <h3>Quick Links</h3>
+         <a href="attraction.html">Braj's Attractions</a>
+         <a href="hidden-gems.html">Unseen Beauty</a>
+         <a href="restaurents.html">Stay & Meals Much More...</a>
+         <a href="review.html">Top Review</a>
+         <a href="tour-packages.html">Tour Packages</a>
+       </div>
+     
+       <!-- Contact QR & Info -->
+       <div id="f3">
+         <h3>Connect with Us</h3>
+         <img src="logo-and-icons-footers-images/WhatsApp qr code scan.jpg" alt="WhatsApp QR" id="qr" />
+         <p>Scan to chat on WhatsApp</p>
+       </div>
+     
+       <!-- Address with icon -->
+       <div id="f4">
+         <h4>
+           <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Location Icon" class="address-icon" />
+           Maal Godam , Road<br />
+           Mathura Station<br />
+           Mathura<br />
+           Tel: +91 9837494865<br />
+           <a href="https://maps.google.com" target="_blank">Get Directions</a>
+         </h4>
+       </div>
+     
+       <!-- Footer Bottom -->
+       <div id="f5">
+         <p>© 2025 <strong>Braj Darshan</strong>. All Rights Reserved.</p>
+       </div>
+     </footer>
+    
+</div>
+     
+     
+     
+     <!-- 📝 Booking Modal -->
+<div id="booking-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Plan Your Braj Darshan Trip</h2>
+    <form id="booking-form">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Enter your name" required />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="Enter your email" required />
+
+      <label for="phone">Mobile Number</label>
+      <input id="phone" type="tel" name="phone" placeholder="Enter your mobile number" required />
+
+      <label for="package">Choose Package</label>
+      <select id="package" name="package" required>
+        <option value="" disabled selected>Select Service</option>
+        <option value="Spiritual Tour">Spiritual Tour</option>
+        <option value="Custom Tour">Custom Tour</option>
+        <option value="Pick & Drop">Pick & Drop</option>
+        <option value="Heritage & Culture">Heritage & Culture</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input id="date" type="date" name="date" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+     
+
+
+
+           <!-- 📜 Scripts -->
+           <script
+           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+           crossorigin="anonymous"
+           referrerpolicy="no-referrer"></script>        
+         
+           <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+          
+           <script
+             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+             crossorigin="anonymous"
+             referrerpolicy="no-referrer"
+           ></script>
+           
+           
+           <script src="braj.js"></script>
+         
+
+</body>
+</html>

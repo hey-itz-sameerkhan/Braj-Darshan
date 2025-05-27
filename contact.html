@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - BRAJ-DARSHAN</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <div id="main" data-scroll-container>
+
+    
+    <!-- Navbar -->
+<div id="nav" data-scroll data-scroll-sticky data-scroll-target="#main">
+  <img src="logo-and-icons-footers-images/Braj-Darshan Logo (dark-mode).png" alt="BRAJ-DARSHAN Logo" />
+
+  <!-- 🍔 Hamburger Icon -->
+
+<div id="hamburger">
+  <i class="fa-solid fa-bars"></i>
+</div>
+
+<!-- Sliding Sidebar Menu -->
+<div id="mobile-menu">
+  <div id="close-menu">&times;</div>
+  <a href="home.html">Home</a>
+  <a href="service.html">Services</a>
+  <a href="contact.html">Contact</a>
+  <a href="about-us.html">About</a>
+  <a href="login.html">Login</a>
+</div>
+
+
+  <!-- Desktop Nav Buttons -->
+  <a href="home.html"><button class="nav-button"><h4>home</h4></button></a>
+  <a href="service.html"><button class="nav-button"><h4>services</h4></button></a>
+  <a href="contact.html"><button class="nav-button"><h4>Contact</h4></button></a>
+  <a href="about-us.html"><button class="nav-button"><h4>about</h4></button></a>
+  <a href="login.html"><button class="nav-button"><h4>login</h4></button></a>
+</div>
+
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p>Fill out the form and we will get back to you within 24 hours.</p>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+91 9837494865</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>braj.darshan.travels@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Maal Godam Road , Gopal Nagar Station , Mathura 281001 </span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+
+          <h2>What Service You Need?</h2>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="service" value="Tour Service"> Tour Service </label>
+            <label><input type="checkbox" name="service" value="Luxury Stays"> Luxury Stays </label>
+            <label><input type="checkbox" name="service" value="Pick & Drop"> Pick & Drop </label>
+            <label><input type="checkbox" name="service" value="Others"> Others</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="firstName" placeholder="First name" required>
+            <input type="text" name="lastName" placeholder="Last name" required>
+          </div>
+
+          <div class="input-group">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone number" required>
+          </div>
+
+          <textarea name="message" placeholder="Message" required></textarea>
+
+
+          <p id="statusMessage" class="status-message"></p>
+
+          <button type="submit" class="send-button">Send Message</button>
+
+
+        </form>
+
+      </div>
+    </section>
+
+
+    <div id="popupMsg" style="
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4caf50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    font-family: sans-serif;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+  "></div>
+  
+
+
+
+
+  <!-- 🦶 Footer Section -->
+<footer id="footer">
+  <img
+    src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg"
+    alt=""
+  />
+
+  <!-- Logo -->
+  <div id="f1">
+    <img src="logo-and-icons-footers-images/Braj-Darshan Logo (dark-mode).png" alt="BRAJ-DARSHAN Logo" />
+  </div>
+
+  <!-- Quick Links -->
+  <div id="f2">
+    <h3>Quick Links</h3>
+    <a href="attraction.html">Braj's Attractions</a>
+    <a href="hidden-gems.html">Unseen Beauty</a>
+    <a href="restaurents.html">Stay & Meals Much More...</a>
+    <a href="review.html">Top Review</a>
+    <a href="tour-packages.html">Tour Packages</a>
+  </div>
+
+  <!-- Contact QR & Info -->
+  <div id="f3">
+    <h3>Connect with Us</h3>
+    <img src="logo-and-icons-footers-images/WhatsApp qr code scan.jpg" alt="WhatsApp QR" id="qr" />
+    <p>Scan to chat on WhatsApp</p>
+  </div>
+
+  <!-- Address with icon -->
+  <div id="f4">
+    <h4>
+      <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Location Icon" class="address-icon" />
+      Maal Godam , Road<br />
+      Mathura Station<br />
+      Mathura<br />
+      Tel: +91 9837494865<br />
+      <a href="https://maps.google.com" target="_blank">Get Directions</a>
+    </h4>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div id="f5">
+    <p>© 2025 <strong>Braj Darshan</strong>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+    
+
+</div>
+
+<div id="contact-loader" class="loader" style="display: none;">
+  <div class="spinner"></div>
+</div>
+
+<div class="contact-confirm-card" style="display: none;">
+  <div class="card-content">Your message has been sent!</div>
+  <div class="contact-confirm-close">×</div>
+</div>
+
+
+
+
+  <!-- ✅ GSAP & ScrollTrigger for Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  
+  <script src="contact.js"></script>
+ 
+</body>
+</html>
