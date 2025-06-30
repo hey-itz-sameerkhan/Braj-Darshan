@@ -6,9 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
 app.use(express.static("public"));
-
 
 // 📦 Routes
 const bookingRoutes = require("./routes/book");
@@ -16,13 +14,12 @@ const protectedRoutes = require('./routes/protected');
 const authRoutes = require("./routes/auth");
 const contactRoutes = require('./routes/contact');
 
-
 app.use("/api", bookingRoutes);
-app.use("/api", authRoutes); 
-app.use('/api', protectedRoutes);
-app.use('/api', contactRoutes);
+app.use("/api", authRoutes);
+app.use("/api", protectedRoutes);
+app.use("/api", contactRoutes);
 
-// 🌐 Connect to MongoDB
+// 🌐 MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB connected'))
   .catch((err) => console.error('❌ MongoDB connection failed:', err));
@@ -41,7 +38,7 @@ const transporter = nodemailer.createTransport({
 app.get("/test-email", async (req, res) => {
   const testMailOptions = {
     from: `"Braj Darshan" <${process.env.GMAIL_USER}>`,
-    to: "sam9068khan@gmail.com", 
+    to: "sam9068khan@gmail.com",
     subject: "🧪 Test Email from Braj Darshan",
     html: "<h2>This is a test email 💌</h2>",
   };
@@ -53,6 +50,11 @@ app.get("/test-email", async (req, res) => {
     console.error("❌ Test email failed:", error);
     res.status(500).send("❌ Test email failed");
   }
+});
+
+// ✅ Root Route (for Render health check)
+app.get("/", (req, res) => {
+  res.send("🚩 Braj Darshan Backend is Running Successfully!");
 });
 
 // 🚀 Start Server
