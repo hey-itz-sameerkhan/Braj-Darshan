@@ -1,11 +1,12 @@
 // ⭐ Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
+history.scrollRestoration = "manual";
 
 // ✅ Initialize Locomotive Scroll
 function loco() {
-  const locoScroll = new LocomotiveScroll({ 
+  const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
-    smooth: true,
+    smooth: true
   });
 
   locoScroll.on("scroll", ScrollTrigger.update);
@@ -21,17 +22,18 @@ function loco() {
         top: 0,
         left: 0,
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight
       };
     },
     pinType: document.querySelector("#main").style.transform
       ? "transform"
-      : "fixed",
+      : "fixed"
   });
 
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   ScrollTrigger.refresh();
 }
+
 loco();
 
 
@@ -91,20 +93,18 @@ gsap.from(".button-group", {
 
 
 
-// ✅ Hero background transition on scroll
-gsap.to("#down", {
-  backgroundColor: "#000",
-  scrollTrigger: {
-    trigger: "#down",
-    scroller: "#main",
-    start: "top -25%",
-    end: "top -70%",
-    scrub: 2,
-  },
+
+// ✅ Ensure proper sync on mobile and after reloads
+window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
+});
+window.addEventListener("resize", () => {
+  ScrollTrigger.refresh();
 });
 
-
-
+setTimeout(() => {
+  ScrollTrigger.refresh();
+}, 500);
 
 
 
@@ -434,6 +434,7 @@ gsap.from("#page4 h1", {
 });
 
 
+const backendURL = "https://braj-backend.onrender.com";
 
 // Booking Modal Controls
 const modal = document.getElementById("booking-modal");
@@ -468,12 +469,11 @@ document.getElementById("booking-form").addEventListener("submit", async functio
   e.preventDefault();
   closeModal();
 
-  // Show Loader Spinner
   const loader = document.createElement("div");
   loader.className = "loader-overlay";
   loader.innerHTML = `<div class="loader"></div>`;
   document.body.appendChild(loader);
-  loader.offsetHeight; // force repaint
+  loader.offsetHeight;
 
   const form = this;
   const formData = {
@@ -486,7 +486,7 @@ document.getElementById("booking-form").addEventListener("submit", async functio
   };
 
   try {
-    const res = await fetch("http://localhost:5000/api/book", {
+    const res = await fetch(`${backendURL}/api/book`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -531,7 +531,6 @@ function showConfirmationCard(success, name = "", packageName = "") {
     `;
   document.body.appendChild(card);
 }
-
 
 
 
