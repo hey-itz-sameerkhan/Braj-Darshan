@@ -81,9 +81,8 @@ window.addEventListener("click", (e) => {
   }
 });
 
+const backendURL = "https://braj-backend.onrender.com"; // ✅ Your live backend
 
-// 🎯 Form Submit Handling and Confirmation Card
-// 🎯 Simple Popup Message Function
 // 🎯 Simple Popup Message Function
 function showPopupMessage(message, isError = false) {
   const popup = document.getElementById("popupMsg");
@@ -113,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loader.style.display = "flex";
     confirmationCard.style.display = "none";
 
-
     const formData = {
       services: Array.from(contactForm.querySelectorAll('input[name="service"]:checked')).map(cb => cb.value),
       firstName: contactForm.querySelector('[name="firstName"]').value.trim(),
@@ -122,10 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
       phone: contactForm.querySelector('[name="phone"]').value.trim(),
       message: contactForm.querySelector('[name="message"]').value.trim(),
     };
-    
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${backendURL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -143,10 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmationCard.classList.remove("success");
         confirmationCard.classList.add("error");
       }
-      
+
       confirmationCard.style.display = "flex";
-      
-    
+
     } catch (error) {
       loader.style.display = "none";
       cardContent.innerHTML = `❌ Network error. Please check your internet connection and try again.`;
@@ -154,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
       confirmationCard.classList.add("error");
       confirmationCard.style.display = "flex";
     }
-    
   });
 
   closeIcon.addEventListener("click", () => {
