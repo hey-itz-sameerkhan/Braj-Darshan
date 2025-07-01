@@ -213,28 +213,42 @@ ScrollTrigger.create({
 
 
 // ✅ Smooth Scroll for Attractions (Infinite Scroll)
-function scrollAttractions(direction) {
-  const container = document.getElementById("attraction-scroll");
-  const cards = container.querySelectorAll(".attraction-card");
-  const cardWidth = cards[0].offsetWidth + 25;
+const container = document.getElementById("attraction-scroll");
+  const dotsContainer = document.getElementById("carousel-dots");
 
-  if (direction === 1) {
-    container.scrollBy({ left: cardWidth, behavior: "smooth" });
-    setTimeout(() => {
-      const first = container.querySelector(".attraction-card");
-      container.appendChild(first);
-      container.scrollLeft -= cardWidth;
-    }, 400);
-  } else {
-    const last = cards[cards.length - 1];
-    container.insertBefore(last, cards[0]);
-    container.scrollLeft += cardWidth;
-    setTimeout(() => {
-      container.scrollBy({ left: -cardWidth, behavior: "smooth" });
-    }, 20);
+  function scrollAttractions(direction) {
+    const cardWidth = container.children[0].offsetWidth + 24;
+    container.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
   }
-}
 
+  function updateDots() {
+    const cards = container.querySelectorAll(".attraction-card");
+    const scrollLeft = container.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 24;
+    const index = Math.round(scrollLeft / cardWidth);
+
+    const dots = dotsContainer.querySelectorAll("span");
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[index]) dots[index].classList.add("active");
+  }
+
+  function createDots() {
+    const cards = container.querySelectorAll(".attraction-card");
+    dotsContainer.innerHTML = "";
+    cards.forEach((_, i) => {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  container.addEventListener("scroll", () => {
+    updateDots();
+  });
+
+  window.addEventListener("load", () => {
+    createDots();
+  });
 
 
 
@@ -261,48 +275,62 @@ aboutImg.addEventListener('mouseleave', () => {
 
 
 
-//💻 ✅ Smooth Scroll for gem - section (Infinite Scroll)
-function scrollGems(direction) {
-  const container = document.getElementById("gems-scroll");
-  const cards = container.querySelectorAll(".gem-card");
-  const cardWidth = cards[0].offsetWidth + 25; // match your CSS gap: 40px
+//💻 ✅ Smooth Scroll for gem - section 
 
-  if (direction === 1) {
-    // 👉 Right scroll
-    container.scrollBy({ left: cardWidth, behavior: "smooth" });
-    setTimeout(() => {
-      const first = container.querySelector(".gem-card");
-      container.appendChild(first);
-      container.scrollLeft -= cardWidth;
-    }, 400); // wait till scroll ends
-  } else {
-    // 👈 Left scroll
-    const last = cards[cards.length - 1];
-    container.insertBefore(last, cards[0]);
-    container.scrollLeft += cardWidth;
-    setTimeout(() => {
-      container.scrollBy({ left: -cardWidth, behavior: "smooth" });
-    }, 20);
-  }
+const gemsContainer = document.getElementById("gems-scroll");
+const gemsDotsContainer = document.getElementById("gems-dots");
+
+// Scroll function
+function scrollGems(direction) {
+  const cardWidth = gemsContainer.children[0].offsetWidth + 24;
+  gemsContainer.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
 }
+
+// Dot update on scroll
+function updateGemsDots() {
+  const cards = gemsContainer.querySelectorAll(".gem-card");
+  const scrollLeft = gemsContainer.scrollLeft;
+  const cardWidth = cards[0].offsetWidth + 24;
+  const index = Math.round(scrollLeft / cardWidth);
+
+  const dots = gemsDotsContainer.querySelectorAll("span");
+  dots.forEach(dot => dot.classList.remove("active"));
+  if (dots[index]) dots[index].classList.add("active");
+}
+
+// Dot creation
+function createGemsDots() {
+  const cards = gemsContainer.querySelectorAll(".gem-card");
+  gemsDotsContainer.innerHTML = "";
+  cards.forEach((_, i) => {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    gemsDotsContainer.appendChild(dot);
+  });
+}
+
+gemsContainer.addEventListener("scroll", updateGemsDots);
+window.addEventListener("load", createGemsDots);
+
+
 
 
 // 🚀 Travel Diaries Auto Scroll
+
 const scrollContainer = document.getElementById('scrollContainer');
 
-// Duplicate content for smooth loop
-scrollContainer.innerHTML += scrollContainer.innerHTML;
+// Clone only for desktop
+if (window.innerWidth > 768) {
+  scrollContainer.innerHTML += scrollContainer.innerHTML;
+}
 
 let animationFrameId;
 let isScrolling = true;
 
 function autoScroll() {
-  const isMobile = window.innerWidth <= 768;
-  if (!isScrolling) return;
+  if (!isScrolling || window.innerWidth <= 768) return;
 
-  let scrollSpeed = isMobile ? 0.5 : 2.5; // Slower for mobile
-  scrollContainer.scrollLeft += scrollSpeed;
-
+  scrollContainer.scrollLeft += 2.5;
   if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
     scrollContainer.scrollLeft -= scrollContainer.scrollWidth / 2;
   }
@@ -321,19 +349,7 @@ function stopAutoScroll() {
   cancelAnimationFrame(animationFrameId);
 }
 
-// Start on load
-window.addEventListener('load', startAutoScroll);
-
-// Pause auto scroll on hover/interaction
-scrollContainer.addEventListener('mouseenter', stopAutoScroll);
-scrollContainer.addEventListener('mouseleave', startAutoScroll);
-scrollContainer.addEventListener('wheel', () => {
-  stopAutoScroll();
-  clearTimeout(window.resumeScrollTimeout);
-  window.resumeScrollTimeout = setTimeout(startAutoScroll, 3000);
-});
-
-// 🖥️ Enable drag-to-scroll only on desktop/tablet
+// Desktop-only drag to scroll
 if (window.innerWidth > 768) {
   let isDown = false, startX, scrollLeft;
 
@@ -363,7 +379,53 @@ if (window.innerWidth > 768) {
     const walk = (x - startX) * 2;
     scrollContainer.scrollLeft = scrollLeft - walk;
   });
+
+  scrollContainer.addEventListener('mouseenter', stopAutoScroll);
+  scrollContainer.addEventListener('mouseleave', startAutoScroll);
+  scrollContainer.addEventListener('wheel', () => {
+    stopAutoScroll();
+    clearTimeout(window.resumeScrollTimeout);
+    window.resumeScrollTimeout = setTimeout(startAutoScroll, 3000);
+  });
+
+  startAutoScroll();
 }
+
+// 👉 Mobile Pagination Dots for Diaries
+function setupDiaryDots() {
+  const cards = document.querySelectorAll(".diary-card");
+  const dotsContainer = document.getElementById("diaryDots");
+
+  // Skip if not mobile
+  if (window.innerWidth > 768 || !dotsContainer) return;
+
+  dotsContainer.innerHTML = "";
+  cards.forEach((_, idx) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (idx === 0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
+  });
+
+  const updateActiveDot = () => {
+    const scrollX = scrollContainer.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 20; // including gap
+    const index = Math.round(scrollX / cardWidth);
+    const dots = dotsContainer.querySelectorAll(".dot");
+
+    dots.forEach((d, i) => {
+      d.classList.toggle("active", i === index);
+    });
+  };
+
+  scrollContainer.addEventListener("scroll", () => {
+    requestAnimationFrame(updateActiveDot);
+  });
+}
+
+// Run on load
+window.addEventListener("load", setupDiaryDots);
+window.addEventListener("resize", setupDiaryDots);
 
 
 
