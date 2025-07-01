@@ -332,26 +332,28 @@ textarea {
 }
 
 
-
+/* 🔄 Loader Overlay */
 .loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999;
+  padding: 20px;
 }
 
+/* 🔄 Spinning Circle */
 .spinner {
   border: 6px solid #f3f3f3;
   border-top: 6px solid #f173ac;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   animation: spin 1s linear infinite;
 }
 
@@ -360,6 +362,7 @@ textarea {
   100% { transform: rotate(360deg); }
 }
 
+/* ✅ Confirmation Card */
 .contact-confirm-card {
   position: fixed;
   top: 50%;
@@ -371,11 +374,13 @@ textarea {
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   color: #fff;
-  padding: 30px 40px;
+  padding: 24px 32px;
   text-align: center;
-  z-index: 99999;
+  z-index: 10000;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+  max-width: 90%;
+  width: 400px;
   display: none;
   animation: fadeInPop 0.4s ease forwards;
 }
@@ -390,18 +395,22 @@ textarea {
   background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
 }
 
+/* ❌ Close (×) Button */
 .contact-confirm-close {
-  margin-top: -20px;
-  font-size: 24px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 26px;
   cursor: pointer;
   color: #fff;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
 
 .contact-confirm-close:hover {
   transform: scale(1.3);
 }
 
+/* 📱 Entry Animation */
 @keyframes fadeInPop {
   from {
     opacity: 0;
@@ -413,6 +422,24 @@ textarea {
   }
 }
 
+/* 📱 Responsive Font Adjustments */
+@media (max-width: 480px) {
+  .contact-confirm-card {
+    padding: 20px 24px;
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .contact-confirm-close {
+    font-size: 24px;
+  }
+
+  .spinner {
+    width: 42px;
+    height: 42px;
+    border-width: 5px;
+  }
+}
 
 
 /* Footer styles */
