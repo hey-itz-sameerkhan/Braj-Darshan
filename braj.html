@@ -93,60 +93,64 @@
           </section>
     
     
-    
-     <!-- ✅ BRAJ-DARSHAN Attractions Section -->
            
-       <section id="braj-attractions">
-         <h2 class="section-heading">Attractions <br><span>worth a thousand stories</span></h2>
-         <div class="carousel-wrapper">
-               
-           
-           <div class="attraction-scroll" id="attraction-scroll">
-             <!-- 25 cards -->
-             <div class="attraction-card" style="background-image: url('attraction-section-images/red\ fort.jpg');">
-               <h3>red fort</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/prem\ mandirjpg.jpg');">
-               <h3>Prem Mandir</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/yamuna\ ghat.webp');">
-               <h3>Yamuna Ghats</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/taj\ mahal.webp');">
-               <h3>Taj Mahal</h3>
-             </div>
-             <!-- Add more cards -->
-             <div class="attraction-card" style="background-image: url('attraction-section-images/iskcon\ temple.jpg');">
-               <h3>Iskcon temple</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/maa\ vaishno\ devi\ mandir.jpg');">
-               <h3>Maa Vaishno Devi</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/shri\ banke\ bihari\ temple.webp');">
-               <h3>Shri Banke Bihari Mandir</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/char\ dhaam\ temple.jpg');">
-               <h3>chaar dhaam</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/birla\ \(gita\)\ mandir.jpg');">
-               <h3>birla mandir</h3>
-             </div>
-             <div class="attraction-card" style="background-image: url('attraction-section-images/janm\ bhoomi.jpg');">
-               <h3>janm bhoomi</h3>
-             </div>
-       
-           </div>
-        
-         </div>
-       
-         <div class="discover-btn">
-           <button class="arrow left" onclick="scrollAttractions(-1)"><i class="fa-solid fa-angle-left"></i></button>
-       
-           <a href="attraction.html" class="btn primary-btn">Discover More</a>
-       
-           <button class="arrow right" onclick="scrollAttractions(1)"><i class="fa-solid fa-angle-right"></i></button>
-         </div>
-       </section>
+       <!-- ✅ BRAJ-DARSHAN Attractions Section -->
+<section id="braj-attractions">
+  <h2 class="section-heading">Attractions <br><span>worth a thousand stories</span></h2>
+
+  <div class="carousel-container">
+    <button class="arrow left" onclick="scrollAttractions(-1)">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+
+    <div class="attraction-scroll" id="attraction-scroll">
+      <!-- 💛 Attraction Cards -->
+      <div class="attraction-card" style="background-image: url('attraction-section-images/red fort.jpg');">
+        <h3>Red Fort</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/prem mandirjpg.jpg');">
+        <h3>Prem Mandir</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/yamuna ghat.webp');">
+        <h3>Yamuna Ghats</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/taj mahal.webp');">
+        <h3>Taj Mahal</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/iskcon temple.jpg');">
+        <h3>Iskcon Temple</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/maa vaishno devi mandir.jpg');">
+        <h3>Maa Vaishno Devi</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/shri banke bihari temple.webp');">
+        <h3>Shri Banke Bihari Mandir</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/char dhaam temple.jpg');">
+        <h3>Chaar Dhaam</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/birla (gita) mandir.jpg');">
+        <h3>Birla Mandir</h3>
+      </div>
+      <div class="attraction-card" style="background-image: url('attraction-section-images/janm bhoomi.jpg');">
+        <h3>Janm Bhoomi</h3>
+      </div>
+    </div>
+
+    <button class="arrow right" onclick="scrollAttractions(1)">
+      <i class="fa-solid fa-angle-right"></i>
+    </button>
+  </div>
+
+  <!-- Pagination Dots -->
+  <div class="carousel-dots" id="carousel-dots"></div>
+
+  <!-- Discover Button -->
+  <div class="discover-btn">
+    <a href="attraction.html" class="btn primary-btn">Discover More</a>
+  </div>
+</section>
+
        
        
          <section id="about-us" class="about-us-section">
@@ -212,7 +216,11 @@
        <section id="hidden-gems">
          <h2 class="section-heading">Hidden Jewels 
             <br><span> Unseen Beauty of History & Spirituality</span></h2>
-         <div class="carousel-wrapper">
+         
+            <div class="carousel-container">
+              <button class="arrow left" onclick="scrollGems(-1)">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
        
            <div class="gems-scroll" id="gems-scroll">
              <!-- You can add 20-25+ cards here -->
@@ -228,16 +236,21 @@
              <div class="gem-card" style="background-image: url('gems-section-images/Rajeswar\ mandir.jpg');"><h3>rajeswar mandir</h3></div>
              <!-- repeat as needed -->
            </div>
+
+           <button class="arrow right" onclick="scrollGems(1)">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
        
          </div>
-       
+
+  <!-- Pagination Dots -->
+<div class="carousel-dots" id="gems-dots"></div>
+
+
          <div class="discover-btn">
-           <button class="arrow left" onclick="scrollGems(-1)"><i class="fa-solid fa-angle-left"></i></button>
-       
            <a href="hidden-gems.html" class="btn primary-btn">Discover More</a>
-       
-           <button class="arrow right" onclick="scrollGems(1)"><i class="fa-solid fa-angle-right"></i></button>
          </div>
+
        </section>
        
        
@@ -449,7 +462,10 @@
     </div>
        
          </div>
-          <div class="explore-btn">
+
+         <div class="mobile-dots" id="diaryDots"></div>
+
+         <div class="explore-btn">
          <a href="restaurents.html" class="btn primary-btn">Explore More</a>
        </div>
        </section>
