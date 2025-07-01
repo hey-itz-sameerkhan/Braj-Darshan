@@ -356,32 +356,32 @@ body {
   display: block;
   font-weight: 500;
 }
-.carousel-wrapper {
+
+/* 💛 Carousel Container */
+.carousel-container {
   display: flex;
   align-items: center;
   position: relative;
   width: 100%;
-  overflow-x: visible;
+  overflow: hidden;
 }
 
 .attraction-scroll {
   display: flex;
   gap: 24px !important;
-  overflow: hidden;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 10px;
   width: 100%;
 }
-
 .attraction-scroll::-webkit-scrollbar {
   display: none;
 }
 
 .attraction-card {
   cursor: pointer;
-  flex: 0 0 24%;
+  flex: 0 0 32.6%;
   height: 360px;
   scroll-snap-align: start;
   background-size: cover;
@@ -391,9 +391,8 @@ body {
   position: relative;
   transition: transform 0.3s ease;
 }
-
 .attraction-card h3 {
-  font-family :Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   cursor: default;
   position: absolute;
@@ -413,32 +412,27 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.arrow {
+/* 💛 Arrows */
+.carousel-container .arrow {
   background: transparent;
   border: none;
-  font-size: 30px;
   color: #fdd835;
+  font-size: 30px;
   cursor: pointer;
   padding: 10px;
   z-index: 10;
-}
-.arrow.left {
-  cursor: default;
-  margin-right: 10px;
-}
-.arrow.right {
-  cursor: default;
-  margin-left: 10px;
+  transition: transform 0.2s ease;
 }
 
+.carousel-container .arrow:hover {
+  transform: scale(1.3);
+}
 
-
- .discover-btn {
+/* 💛 Discover Button */
+.discover-btn {
   text-align: center;
   margin-top: 30px;
 }
-
 .discover-btn a {
   display: inline-block;
   padding: 12px 20px;
@@ -453,12 +447,43 @@ body {
 }
 .discover-btn a:hover {
   background-color: #fff176;
-  /* color: #000; */
   transform: scale(1.05);
-  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); */
-} 
+}
+
+/* 💛 Pagination Dots */
+.carousel-dots {
+  display: none;
+}
 
 @media (max-width: 768px) {
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 8px;
+  }
+}
+
+.carousel-dots span {
+  width: 12px;
+  height: 12px;
+  background-color: #fdd835;
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+.carousel-dots span.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* 💛 Responsive */
+@media (max-width: 768px) {
+  .carousel-container .arrow {
+    display: none;
+  }
+
   .discover-btn {
     display: flex;
     justify-content: space-between;
@@ -473,40 +498,11 @@ body {
     text-align: center;
     font-size: 14px;
     padding: 12px 16px;
-    background-color: #fdd835;
-    color: #000;
-    border-radius: 30px;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-
-  .discover-btn a:hover {
-    background-color: #fff176;
-    transform: scale(1.05);
-  }
-
-  .arrow {
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 50%;
-    background-color: #fdd835;
-    color: #000;
-    border: 2px solid #000;
-    transition: 0.3s ease;
-  }
-
-  .arrow:hover {
-    background-color: #fff176;
-    transform: scale(1.1);
   }
 }
 
-@media (max-width: 768px) {
-  .diary-card {
-    min-width: 85vw;
-  }
-}
+
+
 
 
 
@@ -756,34 +752,42 @@ body {
   overflow: hidden;
 }
 
-.carousel-wrapper {
+.carousel-container {
   display: flex;
   align-items: center;
-  /* gap: 15px; */
   position: relative;
-  overflow-x: visible;
+  width: 100%;
+  overflow: hidden;
 }
 
-.gems-scroll {
-  display: flex;
-  gap: 40px !important;
-  overflow-x: auto;
-  overflow: hidden;
-  width: 100%;
-  padding: 10px;
-  scroll-behavior: smooth;
-}
+
+  .gems-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    width: 100%;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  
 .gem-card {
   scroll-snap-align: start;
 }
+
+.gems-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .gems-scroll {
-  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;  /* for Internet Explorer and Edge */
+  scrollbar-width: none;     /* for Firefox */
 }
 
 
 /* 💎 GEM cards upgraded */
 .gem-card {
-  flex: 0 0 23%;
+  flex: 0 0 24%;
   height: 370px;
   border-radius: 20px;
   background-size: cover;
@@ -832,7 +836,75 @@ body {
 }
 
 
-.arrow {
+/* 📍 Pagination Dots (Common) */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  gap: 8px;
+}
+.carousel-dots span {
+  width: 12px;
+  height: 12px;
+  background-color: #fdd835;
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+.carousel-dots span.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Hide dots by default */
+.carousel-dots {
+  display: none;
+}
+
+/* Show dots only on mobile */
+@media (max-width: 768px) {
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 8px;
+  }
+}
+
+
+
+/* 💎 Responsive Hidden Gems */
+@media (max-width: 768px) {
+  #hidden-gems .carousel-container .arrow {
+    display: none;
+  }
+
+  #hidden-gems .discover-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  #hidden-gems .discover-btn a {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .gem-card {
+    flex: 0 0 75%;
+  }
+}
+
+
+/* 💛 Arrows */
+.carousel-container .arrow {
   background: transparent;
   border: none;
   color: #fdd835;
@@ -843,10 +915,9 @@ body {
   transition: transform 0.2s ease;
 }
 
-.arrow:hover {
+.carousel-container .arrow:hover {
   transform: scale(1.3);
 }
-
 
 
 
@@ -982,11 +1053,10 @@ body {
 
 
 
-
-/*-- ✨ Custom CSS for braj explore --*/
+/*-- ✨ BRAJ Explore Section CSS (Updated) --*/
 
 #braj-diaries {
-  background: #000; /* Adjust based on your BRAJ-DARSHAN theme */
+  background: #000;
   padding: 60px 20px;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
@@ -1008,14 +1078,14 @@ body {
   text-align: center;
   font-size: 30px;
   color: #fff;
-  display: block;
   margin-bottom: 40px;
 }
+
 #scrollContainer {
   overflow-x: auto;
-  scroll-behavior: auto; /* not smooth here, JS handles it manually */
+  scroll-behavior: auto;
   display: flex;
-  gap: 30px; /* or as per your card spacing */
+  gap: 40px;
 }
 
 .diaries-scroll-container {
@@ -1029,8 +1099,8 @@ body {
 .diary-card {
   position: relative;
   min-width: 550px;
-  max-width: 300px;  /* Ensure same width */
-  height: 400px;     /* Fixed height */
+  max-width: 300px;
+  height: 400px;
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
@@ -1041,8 +1111,8 @@ body {
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+
 .diary-card h3 {
-  cursor: default;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1052,26 +1122,24 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
-  transition: opacity 0.3s ease;  
+  transition: opacity 0.3s ease;
   border-radius: 0 0 15px 15px;
 }
+
 .diary-card:hover h3 {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
 }
-
 
 .diary-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(253, 216, 53, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .diary-card img {
   height: 100%;
   width: 100%;
-  max-height: 100%;
-  object-fit: cover; /* Keeps images consistent */
+  object-fit: cover;
   transition: 0.5s ease;
 }
 
@@ -1081,14 +1149,11 @@ body {
 }
 
 .diary-card .info {
-  cursor: default;
   position: absolute;
-  justify-content: center;
-  align-items: center;
-  top: 0; /* change from bottom: 0 */
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* cover entire card */
+  height: 100%;
   padding: 20px;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
@@ -1096,12 +1161,13 @@ body {
   transition: 0.4s ease;
   display: flex;
   flex-direction: inherit;
+  justify-content: center;
+  align-items: center;
 }
 
 .diary-card:hover .info {
   transform: translateY(0);
 }
-
 
 .diary-card .info h4 {
   color: #fdd835;
@@ -1113,28 +1179,24 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #fff;
   font-size: 14px;
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
   display: -webkit-box;
-  -webkit-line-clamp: 1; /* Show 4 lines max */
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 
 .highlight {
-  font-family: "Playfair Display", "serif";
+  font-family: "Playfair Display", serif;
   font-size: 19.2px;
   font-weight: 400;
   color: #ffd700;
-  font-style: bold;
 }
-
 
 .explore-btn {
   padding-top: 10px;
   text-align: center;
-  /* margin-top: 30px; */
 }
-.explore-btn a{
+
+.explore-btn a {
   display: inline-block;
   padding: 12px 20px;
   border-radius: 30px;
@@ -1161,6 +1223,79 @@ body {
   cursor: -webkit-grabbing;
 }
 
+/* 🌐 Responsive Layouts */
+@media (max-width: 768px) {
+  .diary-card {
+    min-width: 85vw;
+    height: 340px;
+    scroll-snap-align: start;
+    transition: none !important;
+    box-shadow: 0 0 10px rgba(253, 216, 53, 0.3);
+  }
+
+  .diaries-scroll-container {
+    gap: 19px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  /* 📴 Disable all hover effects and info */
+  .diary-card:hover,
+  .diary-card:hover h3,
+  .diary-card:hover .info,
+  .diary-card img:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    display: initial;
+  }
+
+  .diary-card .info {
+    display: none !important;
+  }
+
+  .diary-card h3 {
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+  }
+
+  #braj-diaries h2 {
+    font-size: 30px;
+  }
+
+  #braj-diaries p.sub-heading {
+    font-size: 16px;
+  }
+
+  .explore-btn a {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  /* ✅ Mobile Pagination Dots Fixed */
+  .mobile-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+    gap: 6px;
+  }
+
+  .mobile-dots .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  .mobile-dots .dot.active {
+    background-color: #fdd835;
+  }
+}
 
 @media (max-width: 400px) {
   .diary-card {
@@ -1169,80 +1304,19 @@ body {
   }
 
   #braj-diaries h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   #braj-diaries p.sub-heading {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .diary-card:hover h3,
-  .diary-card:hover .info {
-    display: none !important;
-  }
-  .diary-card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .diaries-scroll-container {
-    gap: 16px;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .diary-card {
-    min-width: 85vw; /* Show one at a time */
-    height: 340px;
-    scroll-snap-align: start;
-    pointer-events: auto;
-    transition: none !important;
-    box-shadow: 0 0 10px rgba(253, 216, 53, 0.3);
-  }
-
-  .diary-card:hover h3,
-  .diary-card:hover .info {
-    display: none !important;
-  }
-
-  .diary-card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-  .diary-card img {
-    transform: none !important;
-    filter: none !important;
-  }
-
-  .diary-card .info {
-    display: none !important;
-  }
-
-  #braj-diaries h2 {
-    font-size: 30px;
-  }
-
-  #braj-diaries p.sub-heading {
-    font-size: 16px;
-  }
-
-  .diary-card h3 {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .explore-btn a {
     font-size: 14px;
-    padding: 10px 16px;
   }
 }
 
-
+@media (min-width: 769px) {
+  .mobile-dots {
+    display: none !important;
+  }
+}
 
 
 
