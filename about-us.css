@@ -790,14 +790,7 @@ body {
 
 /* ✅ Fix Horizontal Scroll & Overflow Issues */
 
-/* Force no horizontal scroll */
-html, body {
-  overflow-x: hidden !important;
-}
 
-#main {
-  overflow-x: hidden;
-}
 
 /* Fix celebration-card breaking mobile layout */
 .celebration-card {
@@ -835,3 +828,70 @@ html, body {
   max-width: 100vw;
 }
 
+/* ✅ FINAL FIXES FOR MOBILE HORIZONTAL SCROLL */
+
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+#main, .mission-section, .celebration-grid, .values-section, .review-track-wrapper, .review-track-container {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Force all elements to not overflow viewport */
+* {
+  max-width: 100%;
+}
+
+/* Fix celebration-card breaking layout */
+.celebration-card {
+  flex: 1 1 100%;
+  min-width: unset;
+  max-width: 100%;
+}
+
+/* Overlay image fix on mobile */
+@media (max-width: 768px) {
+  .overlay-img {
+    position: static !important;
+    margin-top: 20px;
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Mobile nav spacing issue fix */
+@media (max-width: 768px) {
+  #nav {
+    padding: 0 10px !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Force mission-wrapper to stay in bounds */
+.mission-wrapper,
+.celebration-grid,
+.values-section {
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+/* Review section scroll fix */
+@media (max-width: 768px) {
+  .review-track-container {
+    width: max-content !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-x: auto !important;
+  }
+
+  .review-card {
+    flex: 0 0 auto;
+  }
+
+  .review-track-wrapper {
+    overflow-x: auto;
+  }
+}
