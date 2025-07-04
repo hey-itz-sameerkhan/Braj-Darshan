@@ -626,6 +626,22 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+window.addEventListener("load", () => {
+  const loader = document.getElementById("preloader");
+
+  // Wait a short moment for smoother transition (especially on deploy)
+  setTimeout(() => {
+    gsap.to(loader, {
+      opacity: 0,
+      duration: 0.7,
+      ease: "power1.out",
+      onComplete: () => {
+        loader.style.display = "none";
+        document.body.style.overflow = "visible"; // restore scroll
+      }
+    });
+  }, 500); // Delay ensures all assets fully render
+});
 
 
 
