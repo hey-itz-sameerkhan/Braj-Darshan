@@ -43,4 +43,7 @@ This project showcases real-world travel services with animations, scroll effect
 
 
 ```html
-[![](preview.gif)](https://your-deployment-link.netlify.app)
+## 🌐 Live View
+
+[🌍 View Website](https://brajdarshantravels.netlify.app/)
+
