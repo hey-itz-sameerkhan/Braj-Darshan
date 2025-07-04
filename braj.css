@@ -22,10 +22,12 @@ img {
 }
 
 body {
+  overflow: hidden; /* prevent scroll during preloader */
   position: relative;
   overflow-x: hidden; /* block page-wide horizontal scroll */
 }
 #main {
+  overflow: visible !important;
   min-height: 100vh;
 }
 
