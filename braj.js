@@ -500,33 +500,41 @@ gsap.from("#page4 h1", {
 
 const backendURL = "https://braj-backend.onrender.com";
 
-// Booking Modal Controls
+// ✅ Booking Modal Controls (Final Fixed)
 const modal = document.getElementById("booking-modal");
 const startButtons = document.querySelectorAll('a[href="#plan"], .start-btn');
 const closeBtn = modal.querySelector(".close-btn");
 
-startButtons.forEach(btn => {
-  btn.addEventListener("click", e => {
-    e.preventDefault();
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  });
-});
+function openModal() {
+  modal.style.display = "flex";
+  document.getElementById("main").style.pointerEvents = "none"; // 🚫 Prevent background scroll/interaction
+}
 
 function closeModal() {
   modal.style.display = "none";
-  document.body.style.overflow = "hidden";
+  document.getElementById("main").style.pointerEvents = "auto"; // ✅ Re-enable interaction/scroll
 }
 
+// Open modal on "Start Planning" button click
+startButtons.forEach(btn => {
+  btn.addEventListener("click", e => {
+    e.preventDefault();
+    openModal();
+  });
+});
+
+// Close modal on "×" button
 if (closeBtn) {
   closeBtn.addEventListener("click", closeModal);
 }
 
+// Close modal on ESC key
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && modal.style.display === "flex") {
     closeModal();
   }
 });
+
 
 // Booking Form Submit Handler
 document.getElementById("booking-form").addEventListener("submit", async function (e) {
