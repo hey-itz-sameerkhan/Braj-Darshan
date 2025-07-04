@@ -606,3 +606,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
+// 🎥 Popup Message Logic for Watch Video
+window.addEventListener("DOMContentLoaded", () => {
+  const watchBtn = document.querySelector('a[href="#video"].secondary-btn');
+  const popup = document.getElementById("popup-msg");
+
+  if (watchBtn && popup) {
+    watchBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Show the popup
+      popup.classList.add("show");
+
+      // Hide it after 2.5 seconds
+      setTimeout(() => {
+        popup.classList.remove("show");
+      }, 2500);
+    });
+  }
+});
+
+
+
