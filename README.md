@@ -32,7 +32,7 @@ A **full-stack travel booking platform** focused on the sacred cities of **Mathu
 - 📱 **Mobile-Responsive & Desktop-First Design**  
 - 🧭 **Section-Based Navigation** with animated reveal effects  
 - 📂 **Clean & Modular Folder Structure** (Frontend + Backend separated)  
-- 💌 **Confirmation via Email & SMS** (via Fast2SMS & Nodemailer)  
+- 💌 **Confirmation via Email & SMS** (via Gmail & Nodemailer)  
 - 🛡️ **Spam Prevention & Booking Validations**
 
 ---
