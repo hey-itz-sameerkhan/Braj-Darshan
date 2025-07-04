@@ -42,7 +42,6 @@ This project showcases real-world travel services with animations, scroll effect
 
 
 
-```html
-[![🌐 Live Site](https://img.shields.io/badge/Live%20Site-BrajDarshan-yellow?style=for-the-badge&logo=netlify)](https://brajdarshantravels.netlify.app/)
-
+## 🌐 Live Demo  
+👉 **[Click here to view the project](https://brajdarshantravels.netlify.app/)**  
 
