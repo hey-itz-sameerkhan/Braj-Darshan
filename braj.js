@@ -617,6 +617,15 @@ window.addEventListener("click", (e) => {
   }
 });
 
+// ✅ Restrict booking form date input to today and future only
+window.addEventListener("DOMContentLoaded", () => {
+  const dateInput = document.querySelector('#booking-form input[type="date"]');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+});
+
 
 
 
