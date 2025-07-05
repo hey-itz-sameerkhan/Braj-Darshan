@@ -1,5 +1,9 @@
 # 🛕 Braj Darshan – Tour & Travel Website
 
+![Last Commit](https://img.shields.io/github/last-commit/hey-itz-sameerkhan/braj-darshan)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)
+
 A **full-stack travel booking platform** focused on the sacred cities of **Mathura** and **Agra**, crafted to offer a smooth, immersive experience with modern animations, real-time booking simulation, and a touch of Braj's divine charm.
 
 ---
