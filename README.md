@@ -54,7 +54,7 @@ A **full-stack travel booking platform** focused on the sacred cities of **Mathu
 
 ## 🌐 Live Demo
 
-👉 **[Click here to view the project](https://brajdarshantravels.netlify.app/)**
+👉 **[Click here to view the project](https://braj-darshan-tour-and-travels.netlify.app/)**
 
 ---
 
