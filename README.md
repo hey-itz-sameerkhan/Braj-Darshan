@@ -47,7 +47,7 @@ A **full-stack travel booking platform** focused on the sacred cities of **Mathu
 
 ![braj darshan preview (5)](https://github.com/user-attachments/assets/97f36ff0-cb12-4e56-a0c8-aeb9477c00ba)
 ![braj darshan preview (6)](https://github.com/user-attachments/assets/338a4c1f-e6e0-4375-9b50-a045ff0cdc71)
-![Braj-darshan logo (extra-material)](https://github.com/user-attachments/assets/bca31731-3cda-4da8-b43b-40e6f98a8e68)
+![Braj-darshan logo (extra-material) github logo](https://github.com/user-attachments/assets/091b7434-592a-42d7-afd1-149b4bb4f8d3)
 ![braj darshan preview (4)](https://github.com/user-attachments/assets/53896518-2415-45db-b5b0-3623fb89bc94)
 
 ---
