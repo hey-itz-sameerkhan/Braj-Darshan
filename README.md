@@ -61,17 +61,21 @@ A **full-stack travel booking platform** focused on the sacred cities of **Mathu
 
 ## 📽️ Project Presentation
 
-Want a visual walkthrough of the project architecture and design philosophy?  
+Want a visual walkthrough of the architecture, booking system, and design behind **Braj Darshan**?  
 👉 [Click here to view the official Braj Darshan PPT in Presentation Mode](https://docs.google.com/presentation/d/1fmYHSxJweIZGOh55c_DwhgGdk_sowE9r/present)
 
-This PPT includes:
-- Tech stack and backend flow
-- Booking system logic
-- Visual and animated elements
-- Key design highlights
-- Real deployment & testing overview
+This presentation covers:
+- 📌 Project inspiration & flow
+- ⚙️ Full-stack architecture
+- 🎨 UI/UX decisions
+- 🛒 Booking simulation logic
+- 📱 Mobile responsiveness
+- ✅ Deployment-ready structure
 
 ---
+
+## 📝 License
+
 
 
 
