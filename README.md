@@ -56,7 +56,24 @@ A **full-stack travel booking platform** focused on the sacred cities of **Mathu
 
 👉 **[Click here to view the project](https://braj-darshan-tour-and-travels.netlify.app/)**
 
+
 ---
+
+## 📽️ Project Presentation
+
+Want a visual walkthrough of the project architecture and design philosophy?  
+👉 [Click here to view the official Braj Darshan PPT in Presentation Mode](https://docs.google.com/presentation/d/1fmYHSxJweIZGOh55c_DwhgGdk_sowE9r/present)
+
+This PPT includes:
+- Tech stack and backend flow
+- Booking system logic
+- Visual and animated elements
+- Key design highlights
+- Real deployment & testing overview
+
+---
+
+
 
 ## 📝 License
 
